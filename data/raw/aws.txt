@@ -1,0 +1,5 @@
+AWS IAM manages users, groups and roles.
+
+Amazon S3 stores objects.
+
+Amazon EC2 provides virtual servers.
