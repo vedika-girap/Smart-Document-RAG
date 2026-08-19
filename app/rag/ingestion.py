@@ -1,4 +1,6 @@
 import numpy as np
+from pathlib import Path
+
 
 from app.loaders.pdf_loader import PDFLoader
 from app.preprocessing.lc_chunker import LangChainChunker
@@ -13,9 +15,9 @@ class IngestionService():
         self.vector_store = vector_store
         self.chunker = LangChainChunker()
 
-    def ingest_pdf(self, file_path: str):
-        loader = PDFLoader(file_path)
-        document = loader.load()
+    def ingest_pdf(self, file_path: Path):
+        loader = PDFLoader()
+        document = loader.load(file_path)
         chunks = self.chunker.split(document)
         texts = [
             chunk.content

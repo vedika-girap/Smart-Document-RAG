@@ -41,7 +41,7 @@ async def upload_document(
         )
 
     chunks = ingestion_service.ingest_pdf(
-        str(file_path)
+        Path(file_path)
     )
 
     return {
