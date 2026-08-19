@@ -1,6 +1,7 @@
 from fastapi import FastAPI, UploadFile, File
 import shutil
 from pathlib import Path
+from pydantic import BaseModel
 
 from app.rag.container import (
     ingestion_service,
@@ -18,7 +19,6 @@ UPLOAD_DIR.mkdir(
     parents=True,
     exist_ok=True,
 )
-
 
 @app.get("/")
 def root():
@@ -48,4 +48,28 @@ async def upload_document(
         "filename": file.filename,
         "chunks_created": chunks,
         "status": "indexed",
+    }
+
+class ChatRequest(BaseModel):
+    query: str
+    top_k: int = 5
+
+@app.post("/chat")
+def chat(request: ChatRequest):
+
+    results = rag_service.retriever.retrieve(request.query,request.top_k)
+
+    answer = rag_service.generator.generate(request.query, results)
+
+    sources = [
+        {
+            "filename": document.metadata.get("filename"),
+            "chunk_id": document.metadata.get("chunk_id"),
+            "score": score,
+        }
+        for document, score in results
+    ]
+
+    return {
+        "answer":answer, "sources": sources,
     }
