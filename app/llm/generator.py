@@ -1,16 +1,16 @@
 import os
 
 from dotenv import load_dotenv
-from openai import OpenAI
+from groq import Groq
 
 from app.models.document import Document
 
 load_dotenv()
 
 class Generator:
-    def __init__(self, model: str= "gpt-4.1-mini"):
-        self.client = OpenAI(
-            api_key= os.getenv("OPEN_API_KEY")
+    def __init__(self, model: str= "openai/gpt-oss-20b"):
+        self.client = Groq(
+            api_key= os.getenv("GROQ_API_KEY")
         )        
         self.model = model
 
@@ -43,9 +43,15 @@ Question:
 {query}
 """
 
-        response = self.client.responses.create(
+        response = self.client.chat.completions.create(
             model=self.model,
-            input=prompt,
+            messages=[
+                {
+                    "role": "user",
+                    "content": prompt,
+                }
+            ],
+            temperature= 0,
         )
 
-        return response.output_text
+        return response.choices[0].message.content
