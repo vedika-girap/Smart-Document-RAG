@@ -1,1 +1,698 @@
-[]
+[
+  {
+    "content": "What is IAM? \n PDF \n RSS \n Markdown \nFocus mode \nAWS Identity and Access Management (IAM) is a web service that helps you securely \ncontrol access to AWS resources. With IAM, you can manage permissions that control \nwhich AWS resources users can access. You use IAM to control who is authenticated \n(signed in) and authorized (has permissions) to use resources. IAM provides the \ninfrastructure necessary to control authentication and authorization for your AWS \naccounts. \nIdentities",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 0
+    }
+  },
+  {
+    "content": "accounts. \nIdentities \nWhen you create an AWS account, you begin with one sign-in identity called the AWS \naccount root user that has complete access to all AWS services and resources. We \nstrongly recommend that you don't use the root user for everyday tasks. For tasks that \nrequire root user credentials, see Tasks that require root user credentials in the IAM User \nGuide. \nUse IAM to set up other identities in addition to your root user, such as administrators,",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 1
+    }
+  },
+  {
+    "content": "Guide. \nUse IAM to set up other identities in addition to your root user, such as administrators, \nanalysts, and developers, and grant them access to the resources they need to succeed \nin their tasks. \nAccess management \nAfter a user is set up in IAM, they use their sign-in credentials to authenticate with AWS. \nAuthentication is provided by matching the sign-in credentials to a principal (an IAM \nuser, AWS STS federated principal, IAM role, or application) trusted by the AWS",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 2
+    }
+  },
+  {
+    "content": "user, AWS STS federated principal, IAM role, or application) trusted by the AWS \naccount. Next, a request is made to grant the principal access to resources. Access is \ngranted in response to an authorization request if the user has been given permission to \nthe resource. For example, when you first sign in to the console and are on the console \nHome page, you aren't accessing a specific service. When you select a service, the",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 3
+    }
+  },
+  {
+    "content": "Home page, you aren't accessing a specific service. When you select a service, the \nrequest for authorization is sent to that service and it looks to see if your identity is on \nthe list of authorized users, what policies are being enforced to control the level of \naccess granted, and any other policies that might be in effect. Authorization requests \ncan be made by principals within your AWS account or from another AWS account that \nyou trust.",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 4
+    }
+  },
+  {
+    "content": "can be made by principals within your AWS account or from another AWS account that \nyou trust. \nOnce authorized, the principal can take action or perform operations on resources in \nyour AWS account. For example, the principal could launch a new Amazon Elastic \nCompute Cloud instance, modify IAM group membership, or delete Amazon Simple \nStorage Service buckets. \nTip \nAWS Training and Certification provides a 10-minute video introduction to IAM:",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 5
+    }
+  },
+  {
+    "content": "Tip \nAWS Training and Certification provides a 10-minute video introduction to IAM: \nIntroduction to AWS Identity and Access Management. \nService availability \nIAM, like many other AWS services, is eventually consistent. IAM achieves high \navailability by replicating data across multiple servers within Amazon's data centers \naround the world. If a request to change some data is successful, the change is \ncommitted and safely stored. However, the change must be replicated across IAM,",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 6
+    }
+  },
+  {
+    "content": "committed and safely stored. However, the change must be replicated across IAM, \nwhich can take some time. Such changes include creating or updating users, groups, \nroles, or policies. We recommend that you do not include such IAM changes in the \ncritical, high-availability code paths of your application. Instead, make IAM changes in a \nseparate initialization or setup routine that you run less frequently. Also, be sure to",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 7
+    }
+  },
+  {
+    "content": "separate initialization or setup routine that you run less frequently. Also, be sure to \nverify that the changes have been propagated before production workflows depend on \nthem. For more information, see Changes that I make are not always immediately visible. \nService cost information \nAWS Identity and Access Management (IAM), AWS IAM Identity Center and AWS \nSecurity Token Service (AWS STS) are features of your AWS account offered at no",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 8
+    }
+  },
+  {
+    "content": "Security Token Service (AWS STS) are features of your AWS account offered at no \nadditional charge. You are charged only when you access other AWS services using \nyour IAM users or AWS STS temporary security credentials. \nIAM Access Analyzer external access analysis is offered at no additional charge. \nHowever, you will incur charges for unused access analysis and customer policy \nchecks. For a complete list of charges and prices for IAM Access Analyzer, see IAM \nAccess Analyzer pricing.",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 9
+    }
+  },
+  {
+    "content": "Access Analyzer pricing. \nFor information about the pricing of other AWS products, see the Amazon Web Services \npricing page. \nIntegration with other AWS services \nIAM is integrated with many AWS services. For a list of AWS services that work with \nIAM and the IAM features the services support, see AWS services that work with IAM. \nWhy should I use IAM? \n PDF \n RSS \n Markdown \nFocus mode \nAWS Identity and Access Management is a powerful tool for securely managing access",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 10
+    }
+  },
+  {
+    "content": "Focus mode \nAWS Identity and Access Management is a powerful tool for securely managing access \nto your AWS resources. One of the primary benefits of using IAM is the ability to grant \nshared access to your AWS account. Additionally, IAM allows you to assign granular \npermissions, enabling you to control exactly what actions different users can perform on \nspecific resources. This level of access control is crucial for maintaining the security of",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 11
+    }
+  },
+  {
+    "content": "specific resources. This level of access control is crucial for maintaining the security of \nyour AWS environment. IAM also provides several other security features. You can add \nmulti-factor authentication (MFA) for an extra layer of protection, and leverage identity \nfederation to seamlessly integrate users from your corporate network or other identity \nproviders. IAM also integrates with AWS CloudTrail, providing detailed logging and",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 12
+    }
+  },
+  {
+    "content": "providers. IAM also integrates with AWS CloudTrail, providing detailed logging and \nidentity information to support auditing and compliance requirements. By taking \nadvantage of these capabilities, you can help ensure that access to your critical AWS \nresources is tightly controlled and secure. \nShared access to your AWS account \nYou can grant other people permission to administer and use resources in your AWS \naccount without having to share your password or access key. \nGranular permissions",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 13
+    }
+  },
+  {
+    "content": "account without having to share your password or access key. \nGranular permissions \nYou can grant different permissions to different people for different resources. For \nexample, you might allow some users complete access to Amazon Elastic Compute \nCloud (Amazon EC2), Amazon Simple Storage Service (Amazon S3), Amazon \nDynamoDB, Amazon Redshift, and other AWS services. For other users, you can allow \nread-only access to just some Amazon S3 buckets, or permission to administer just",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 14
+    }
+  },
+  {
+    "content": "read-only access to just some Amazon S3 buckets, or permission to administer just \nsome Amazon EC2 instances, or to access your billing information but nothing else. \nSecure access to AWS resources for applications that run on Amazon EC2 \nYou can use IAM features to securely provide credentials for applications that run on \nEC2 instances. These credentials provide permissions for your application to access \nother AWS resources. Examples include S3 buckets and DynamoDB tables.",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 15
+    }
+  },
+  {
+    "content": "other AWS resources. Examples include S3 buckets and DynamoDB tables. \nMulti-factor authentication (MFA) \nYou can add two-factor authentication to your account and to individual users for extra \nsecurity. With MFA you or your users must provide not only a password or access key \nto work with your account, but also a code from a specially configured device. If you \nalready use a FIDO security key with other services, and it has an AWS supported",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 16
+    }
+  },
+  {
+    "content": "already use a FIDO security key with other services, and it has an AWS supported \nconfiguration, you can use WebAuthn for MFA security. For more information, see \nSupported configurations for using passkeys and security keys \nIdentity federation \nYou can allow users who already have passwords elsewhere\u2014for example, in your \ncorporate network or with an internet identity provider\u2014to access your AWS account. \nThese users are granted temporary credentials that comply with IAM best practice",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 17
+    }
+  },
+  {
+    "content": "These users are granted temporary credentials that comply with IAM best practice \nrecommendations. Using identity federation enhances the security of your AWS \naccount. \nIdentity information for assurance \nIf you use AWS CloudTrail, you receive log records that include information about those \nwho made requests for resources in your account. That information is based on IAM \nidentities. \nPCI DSS Compliance \nIAM supports the processing, storage, and transmission of credit card data by a",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 18
+    }
+  },
+  {
+    "content": "IAM supports the processing, storage, and transmission of credit card data by a \nmerchant or service provider, and has been validated as being compliant with Payment \nCard Industry (PCI) Data Security Standard (DSS). For more information about PCI \nDSS, including how to request a copy of the AWS PCI Compliance Package, see PCI \nDSS Level 1. \nWhen do I use IAM? \n PDF \n RSS \n Markdown \nFocus mode \nAWS Identity and Access Management is a core infrastructure service that provides the",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 19
+    }
+  },
+  {
+    "content": "Focus mode \nAWS Identity and Access Management is a core infrastructure service that provides the \nfoundation for access control based on identities within AWS. You use IAM every time \nyou access your AWS account. The way you use IAM will depend on the specific \nresponsibilities and job functions within your organization. Users of AWS services use \nIAM to access the AWS resources required for their day-to-day work, with",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 20
+    }
+  },
+  {
+    "content": "IAM to access the AWS resources required for their day-to-day work, with \nadministrators granting the appropriate permissions. IAM administrators, on the other \nhand, are responsible for managing IAM identities and writing policies to control access \nto resources. Regardless of your role, you interact with IAM whenever you authenticate \nand authorize access to AWS resources. This could involve signing in as an IAM user,",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 21
+    }
+  },
+  {
+    "content": "and authorize access to AWS resources. This could involve signing in as an IAM user, \nassuming an IAM role, or leveraging identity federation for seamless access. \nUnderstanding the various IAM capabilities and use cases is crucial for effectively \nmanaging secure access to your AWS environment. When it comes to creating policies \nand permissions, IAM provides a flexible and granular approach. You can define trust",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 22
+    }
+  },
+  {
+    "content": "and permissions, IAM provides a flexible and granular approach. You can define trust \npolicies to control which principals can assume a role, in addition to identity-based \npolicies that specify the actions and resources a user or role can access. By configuring \nthese IAM policies, you can help ensure that users and applications have the \nappropriate level of permissions to perform their required tasks. \nWhen you are performing different job functions",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 23
+    }
+  },
+  {
+    "content": "When you are performing different job functions \nAWS Identity and Access Management is a core infrastructure service that provides the \nfoundation for access control based on identities within AWS. You use IAM every time \nyou access your AWS account. \nHow you use IAM differs, depending on the work that you do in AWS. \n\u2022 Service user \u2013 If you use an AWS service to do your job, then your administrator \nprovides you with the credentials and permissions that you need. As you use",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 24
+    }
+  },
+  {
+    "content": "provides you with the credentials and permissions that you need. As you use \nmore advanced features to do your work, you might need additional permissions. \nUnderstanding how access is managed can help you request the right \npermissions from your administrator. \n\u2022 Service administrator \u2013 If you're in charge of an AWS resource at your company, \nyou probably have full access to IAM. It's your job to determine which IAM",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 25
+    }
+  },
+  {
+    "content": "you probably have full access to IAM. It's your job to determine which IAM \nfeatures and resources your service users should access. You must then submit \nrequests to your IAM administrator to change the permissions of your service \nusers. Review the information on this page to understand the basic concepts of \nIAM. \n\u2022 IAM administrator \u2013 If you're an IAM administrator, you manage IAM identities \nand write policies to manage access to IAM. \nWhen you are authorized to access AWS resources",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 26
+    }
+  },
+  {
+    "content": "and write policies to manage access to IAM. \nWhen you are authorized to access AWS resources \nAuthentication is how you sign in to AWS using your identity credentials. You must be \nauthenticated as the AWS account root user, an IAM user, or by assuming an IAM role. \nYou can sign in as a federated identity using credentials from an identity source like \nAWS IAM Identity Center (IAM Identity Center), single sign-on authentication, or",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 27
+    }
+  },
+  {
+    "content": "AWS IAM Identity Center (IAM Identity Center), single sign-on authentication, or \nGoogle/Facebook credentials. For more information about signing in, see How to sign in \nto your AWS account in the AWS Sign-In User Guide. \nFor programmatic access, AWS provides an SDK and CLI to cryptographically sign \nrequests. For more information, see AWS Signature Version 4 for API requests in the IAM \nUser Guide. \nWhen you sign-in as an IAM user",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 28
+    }
+  },
+  {
+    "content": "User Guide. \nWhen you sign-in as an IAM user \nAn IAM user is an identity with specific permissions for a single person or application. \nWe recommend using temporary credentials instead of IAM users with long-term \ncredentials. For more information, see Require human users to use federation with an \nidentity provider to access AWS using temporary credentials in the IAM User Guide. \nAn IAM group specifies a collection of IAM users and makes permissions easier to",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 29
+    }
+  },
+  {
+    "content": "An IAM group specifies a collection of IAM users and makes permissions easier to \nmanage for large sets of users. For more information, see Use cases for IAM users in the \nIAM User Guide. \nWhen you assume an IAM role \nAn IAM role is an identity with specific permissions that provides temporary credentials. \nYou can assume a role by switching from a user to an IAM role (console) or by calling an \nAWS CLI or AWS API operation. For more information, see Methods to assume a role in",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 30
+    }
+  },
+  {
+    "content": "AWS CLI or AWS API operation. For more information, see Methods to assume a role in \nthe IAM User Guide. \nIAM roles are useful for federated user access, temporary IAM user permissions, cross-\naccount access, cross-service access, and applications running on Amazon EC2. For \nmore information, see Cross account resource access in IAM in the IAM User Guide. \nWhen you create policies and permissions \nYou grant permissions to a user by creating a policy, which is a document that lists the",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 31
+    }
+  },
+  {
+    "content": "You grant permissions to a user by creating a policy, which is a document that lists the \nactions that a user can perform and the resources those actions can affect. Any actions \nor resources that are not explicitly allowed are denied by default. Policies can be \ncreated and attached to principals (users, groups of users, roles assumed by users, and \nresources). \nYou can use these policies with an IAM role: \n\u2022 Trust policy \u2013 Defines which principal can assume the role, and under which",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 32
+    }
+  },
+  {
+    "content": "\u2022 Trust policy \u2013 Defines which principal can assume the role, and under which \nconditions. A trust policy is a specific type of resource-based policy for IAM roles. \nA role can have only one trust policy. \n\u2022 Identity-based policies (inline and managed) \u2013 These policies define the \npermissions that the user of the role is able to perform (or is denied from \nperforming), and on which resources. \nUse the Example IAM identity-based policies to help you define permissions for your IAM",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 33
+    }
+  },
+  {
+    "content": "Use the Example IAM identity-based policies to help you define permissions for your IAM \nidentities. After you find the policy that you need, choose view the policy to view the \nJSON for the policy. You can use the JSON policy document as a template for your own \npolicies. \nNote \nIf you are using IAM Identity Center to manage your users, you assign permission sets \nin IAM Identity Center instead of attaching a permissions policy to a principal. When you",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 34
+    }
+  },
+  {
+    "content": "in IAM Identity Center instead of attaching a permissions policy to a principal. When you \nassign a permission set to a group or user in AWS IAM Identity Center, IAM Identity \nCenter creates corresponding IAM roles in each account, and attaches the policies \nspecified in the permission set to those roles. IAM Identity Center manages the role, \nand allows the authorized users you\u2019ve defined to assume the role. If you modify the",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 35
+    }
+  },
+  {
+    "content": "and allows the authorized users you\u2019ve defined to assume the role. If you modify the \npermission set, IAM Identity Center ensures that the corresponding IAM policies and \nroles are updated accordingly. \nFor more information about IAM Identity Center, see What is IAM Identity Center? in the \nAWS IAM Identity Center User Guide. \n \nHow do I manage IAM? \n PDF \n RSS \n Markdown \nFocus mode \nManaging AWS Identity and Access Management within an AWS environment involves",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 36
+    }
+  },
+  {
+    "content": "Focus mode \nManaging AWS Identity and Access Management within an AWS environment involves \nleveraging a variety of tools and interfaces. The most common method is through the \nAWS Management Console, a web-based interface that allows you to perform a wide \nrange of IAM administrative tasks, from creating users and roles to configuring \npermissions. \nFor users more comfortable with command line interfaces, AWS provides two sets of",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 37
+    }
+  },
+  {
+    "content": "permissions. \nFor users more comfortable with command line interfaces, AWS provides two sets of \ncommand line tools - the AWS Command Line Interface and the AWS Tools for \nWindows PowerShell. These allow you to issue IAM-related commands directly from the \nterminal, often more efficiently than navigating the console. Additionally, AWS \nCloudShell enables you to run CLI or SDK commands directly from your web browser, \nusing the permissions associated with your console sign-in.",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 38
+    }
+  },
+  {
+    "content": "using the permissions associated with your console sign-in. \nBeyond the console and command line, AWS offers Software Development Kits (SDKs) \nfor various programming languages, enabling you to integrate IAM management \nfunctionality directly into your applications. Alternatively, you can access IAM \nprogrammatically using the IAM Query API, which allows you to issue HTTPS requests \ndirectly to the service. Leveraging these different management approaches provides",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 39
+    }
+  },
+  {
+    "content": "directly to the service. Leveraging these different management approaches provides \nyou with the flexibility to incorporate IAM into your existing workflows and processes. \nUse the AWS Management Console \nThe AWS Management Console is a web application that comprises and refers to a \nbroad collection of service consoles for managing AWS resources. When you first sign \nin, you see the console home page. The home page provides access to each service",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 40
+    }
+  },
+  {
+    "content": "in, you see the console home page. The home page provides access to each service \nconsole and offers a single place to access the information for performing your AWS \nrelated tasks. Which services and applications are available to you after signing in to the \nconsole depend on which AWS resources you have permission to access. You can be \ngranted permissions to resources either through assuming a role, being a member of a",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 41
+    }
+  },
+  {
+    "content": "granted permissions to resources either through assuming a role, being a member of a \ngroup that has been granted permissions, or being explicitly granted permission. For a \nstand-alone AWS account, the root user or IAM administrator configures access to \nresources. For AWS Organizations, the management account or delegated \nadministrator configures access to resources. \nIf you plan to have people using the AWS Management Console to manage AWS",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 42
+    }
+  },
+  {
+    "content": "If you plan to have people using the AWS Management Console to manage AWS \nresources, we recommend configuring users with temporary credentials as a security \nbest practice. IAM users that have assumed a role, federated principals, and users in \nIAM Identity Center have temporary credentials, while the IAM user and root user have \nlong-term credentials. Root user credentials provide full access to the AWS account,",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 43
+    }
+  },
+  {
+    "content": "long-term credentials. Root user credentials provide full access to the AWS account, \nwhile other users have credentials that provide access to the resources granted them by \nIAM policies. \nThe sign-in experience is different for the different types of AWS Management Console \nusers. \n\u2022 IAM users and the root user sign-in from the main AWS sign-in URL \n(https://signin.aws.amazon.com). Once they sign in they have access to the \nresources in the account to which they have been granted permission.",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 44
+    }
+  },
+  {
+    "content": "resources in the account to which they have been granted permission. \nTo sign in as the root user you must have the root user email address and password. \nTo sign in as an IAM user you must have the AWS account number or alias, the IAM \nuser name, and the IAM user password. \nWe recommend that you restrict IAM users in your account to specific situations that \nrequire long-term credentials, such as for emergency access, and that you use the root",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 45
+    }
+  },
+  {
+    "content": "require long-term credentials, such as for emergency access, and that you use the root \nuser only for tasks that require root user credentials. \nFor convenience, the AWS sign-in page uses a browser cookie to remember the IAM \nuser name and account information. The next time the user goes to any page in the \nAWS Management Console, the console uses the cookie to redirect the user to the \naccount sign-in page.",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 46
+    }
+  },
+  {
+    "content": "account sign-in page. \nSign out of the console when you finish your session to prevent reuse of your previous \nsign in. \n\u2022 IAM Identity Center users sign in using a specific AWS access portal that's \nunique to their organization. Once they sign in they can choose which account or \napplication to access. If they choose to access an account, they choose which \npermission set they want to use for the management session.",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 47
+    }
+  },
+  {
+    "content": "permission set they want to use for the management session. \n\u2022 OIDC and SAML federated principals managed in an external identity provider \nlinked to an AWS account sign-in using a custom enterprise access portal. The \nAWS resources available to users are dependent upon the policies selected by \ntheir organization. \nNote \nTo provide an additional level of security, root user, IAM users, and users in IAM Identity \nCenter can have multi-factor authentication (MFA) verified by AWS before granting",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 48
+    }
+  },
+  {
+    "content": "Center can have multi-factor authentication (MFA) verified by AWS before granting \naccess to AWS resources. When MFA is enabled, you must also have access to the \nMFA device to sign in. \nTo learn more about how different users sign-in to the management console, see Sign in \nto the AWS Management Console in the AWS Sign-In User Guide. \nAWS Command Line Tools \nYou can use the AWS command line tools to issue commands at your system's",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 49
+    }
+  },
+  {
+    "content": "AWS Command Line Tools \nYou can use the AWS command line tools to issue commands at your system's \ncommand line to perform IAM and AWS tasks. Using the command line can be faster \nand more convenient than the console. The command line tools are also useful if you \nwant to build scripts that perform AWS tasks. \nAWS provides two sets of command line tools: the AWS Command Line Interface (AWS \nCLI) and the AWS Tools for Windows PowerShell. For information about installing and",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 50
+    }
+  },
+  {
+    "content": "CLI) and the AWS Tools for Windows PowerShell. For information about installing and \nusing the AWS CLI, see the AWS Command Line Interface User Guide. For information \nabout installing and using the Tools for Windows PowerShell, see the AWS Tools for \nPowerShell User Guide. \nAfter signing in to the console, you can use AWS CloudShell from your browser to run \nCLI or SDK commands. The permissions for accessing AWS resources are based on",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 51
+    }
+  },
+  {
+    "content": "CLI or SDK commands. The permissions for accessing AWS resources are based on \nthe credentials you used to sign-in to the console. Depending on your experience, you \nmay find the CLI to be a more efficient method of managing your AWS account. For \nmore information, see Use AWS CloudShell to work with AWS Identity and Access \nManagement \nAWS Command Line Interface (CLI) and Software Development Kits (SDKs) \nIAM Identity Center and IAM users use different methods to authenticate their",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 52
+    }
+  },
+  {
+    "content": "IAM Identity Center and IAM users use different methods to authenticate their \ncredentials when they authenticate through the CLI or the application interfaces (APIs) \nin the associated SDKs. \nCredentials and configuration settings are located in multiple places, such as the \nsystem or user environment variables, local AWS configuration files, or explicitly \ndeclared on the command line as a parameter. Certain locations take precedence over \nothers.",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 53
+    }
+  },
+  {
+    "content": "declared on the command line as a parameter. Certain locations take precedence over \nothers. \nBoth IAM Identity Center and IAM provide access keys that can be used with the CLI or \nSDK. IAM Identity Center access keys are temporary credentials that can be \nautomatically refreshed and are recommended over the long-term access keys \nassociated with IAM users. \nTo manage your AWS account using the CLI or SDK you can use AWS CloudShell from",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 54
+    }
+  },
+  {
+    "content": "To manage your AWS account using the CLI or SDK you can use AWS CloudShell from \nyour browser. If you use CloudShell to run CLI or SDK commands you must first sign-in \nto the console. The permissions for accessing AWS resources are based on the \ncredentials you used to sign-in to the console. Depending on your experience, you may \nfind the CLI to be a more efficient method of managing your AWS account. \nFor application development, you can download the CLI or SDK to your computer and",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 55
+    }
+  },
+  {
+    "content": "For application development, you can download the CLI or SDK to your computer and \nsign-in from the command prompt or a Docker window. In this scenario, you configure \nauthentication and access credentials as part of the CLI script or SDK application. You \ncan configure programmatic access to resources in different ways, depending on the \nenvironment and the access available to you. \n\u2022 Recommended options for authenticating local code with AWS service are IAM",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 56
+    }
+  },
+  {
+    "content": "\u2022 Recommended options for authenticating local code with AWS service are IAM \nIdentity Center and IAM Roles Anywhere \n\u2022 Recommended options for authenticating code running within an AWS \nenvironment are to use IAM roles or use IAM Identity Center credentials. \nWhen signing in using the AWS access portal, you can get short-term credentials from \nthe start page where you choose your permission set. These credentials have a defined",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 57
+    }
+  },
+  {
+    "content": "the start page where you choose your permission set. These credentials have a defined \nduration and don't automatically refresh. If you want to use these credentials, after \nsigning in to the AWS portal, choose the AWS account and then choose the \npermissions set. Select Command line or programmatic access to view the options \nyou can use to access AWS resources programmatically or from the CLI. For more \ninformation about these methods, see Getting and refreshing temporary credentials in",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 58
+    }
+  },
+  {
+    "content": "information about these methods, see Getting and refreshing temporary credentials in \nthe IAM Identity Center User Guide. These credentials are often used during application \ndevelopment to quickly test code. \nWe recommend using IAM Identity Center credentials that automatically refresh when \nautomating access to your AWS resources. If you have configured users and \npermission sets in IAM Identity Center you use the aws configure sso command to",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 59
+    }
+  },
+  {
+    "content": "permission sets in IAM Identity Center you use the aws configure sso command to \nuse a command-line wizard that will help you identify the credentials available to you \nand store them in a profile. For more information about configuring your profile, see \nConfigure your profile with the aws configure sso wizard in the AWS Command Line \nInterface User Guide for Version 2. \nNote \nMany sample applications use long-term access keys associated with IAM users or root",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 60
+    }
+  },
+  {
+    "content": "Note \nMany sample applications use long-term access keys associated with IAM users or root \nuser. You should only use long-term credentials within a sandbox environment as part \nof a learning exercise. Review the alternatives to long-term access keys and plan to \ntransition your code to use alternative credentials, such as IAM Identity Center \ncredentials or IAM roles, as soon as possible. After transitioning your code, delete the \naccess keys.",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 61
+    }
+  },
+  {
+    "content": "access keys. \nTo learn more about configuring the CLI, see Install or update the latest version of the \nAWS CLI in the AWS Command Line Interface User Guide for Version 2 and \nAuthentication and access credentials in the AWS Command Line Interface User Guide \nTo learn more about configuring the SDK, see IAM Identity Center authentication in the \nAWS SDKs and Tools Reference Guide and IAM Roles Anywhere in the AWS SDKs and \nTools Reference Guide. \nUse the AWS SDKs",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 62
+    }
+  },
+  {
+    "content": "Tools Reference Guide. \nUse the AWS SDKs \nAWS provides SDKs (software development kits) that consist of libraries and sample \ncode for various programming languages and platforms (Java, Python, Ruby, .NET, \niOS, Android, etc.). The SDKs provide a convenient way to create programmatic access \nto IAM and AWS. For example, the SDKs take care of tasks such as cryptographically \nsigning requests, managing errors, and retrying requests automatically. For information",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 63
+    }
+  },
+  {
+    "content": "signing requests, managing errors, and retrying requests automatically. For information \nabout the AWS SDKs, including how to download and install them, see the Tools for \nAmazon Web Services page. \nUse the IAM Query API \nYou can access IAM and AWS programmatically by using the IAM Query API, which \nlets you issue HTTPS requests directly to the service. When you use the Query API, \nyou must include code to digitally sign requests using your credentials. For more",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 64
+    }
+  },
+  {
+    "content": "you must include code to digitally sign requests using your credentials. For more \ninformation, see Calling the IAM API using HTTP query requests and the IAM API \nReference. \n \nHow IAM works \n PDF \n RSS \n Markdown \nFocus mode \nAWS Identity and Access Management provides the infrastructure necessary to control \nauthentication and authorization for your AWS account. \nFirst, a human user or an application uses their sign-in credentials to authenticate with",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 65
+    }
+  },
+  {
+    "content": "First, a human user or an application uses their sign-in credentials to authenticate with \nAWS. IAM matches the sign-in credentials to a principal (an IAM user, AWS STS \nfederated user principal, IAM role, or application) trusted by the AWS account and \nauthenticates the principal to access AWS. \nNext, IAM makes a request to grant the principal access to resources. IAM grants or \ndenies access in response to an authorization request. For example, when you first sign",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 66
+    }
+  },
+  {
+    "content": "denies access in response to an authorization request. For example, when you first sign \nin to the console and are on the console Home page, you aren't accessing a specific \nservice. When you select a service, you send an authorization request to IAM for that \nservice. IAM verifies that your identity is on the list of authorized users, determines what \npolicies control the level of access granted, and evaluates any other policies that might",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 67
+    }
+  },
+  {
+    "content": "policies control the level of access granted, and evaluates any other policies that might \nbe in effect. Principals within your AWS account or from another AWS account that you \ntrust can make authorization requests. \nOnce authorized, the principal can perform actions or operations on resources in your \nAWS account. For example, the principal could launch a new Amazon Elastic Compute \nCloud instance, modify IAM group membership, or delete Amazon Simple Storage",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 68
+    }
+  },
+  {
+    "content": "Cloud instance, modify IAM group membership, or delete Amazon Simple Storage \nService buckets. The following diagram illustrates this process through the IAM \ninfrastructure:",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 69
+    }
+  },
+  {
+    "content": "Components of a request \nWhen a principal tries to use the AWS Management Console, the AWS API, or the AWS \nCLI, that principal sends a request to AWS. The request includes the following \ninformation: \n\u2022 Actions or operations \u2013 The actions or operations that the principal wants to \nperform, such as an action in the AWS Management Console, or an operation in \nthe AWS CLI or AWS API. \n\u2022 Resources \u2013 The AWS resource object upon which the principal requests to \nperform an action or operation.",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 70
+    }
+  },
+  {
+    "content": "perform an action or operation. \n\u2022 Principal \u2013 The person or application that used an entity (user or role) to send \nthe request. Information about the principal includes the permission policies. \n\u2022 Environment data \u2013 Information about the IP address, user agent, SSL enabled \nstatus, and the timestamp. \n\u2022 Resource data \u2013 Data related to the resource requested, such as a DynamoDB \ntable name or a tag on an Amazon EC2 instance.",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 71
+    }
+  },
+  {
+    "content": "table name or a tag on an Amazon EC2 instance. \nAWS gathers the request information into a request context, which IAM evaluates to \nauthorize the request. \nHow principals are authenticated \nA principal signs in to AWS using their credentials which IAM authenticates to permit the \nprincipal to send a request to AWS. Some services, such as Amazon S3 and AWS STS, \nallow specific requests from anonymous users. However, they're the exception to the",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 72
+    }
+  },
+  {
+    "content": "allow specific requests from anonymous users. However, they're the exception to the \nrule. Each type of user goes through authentication. \n\u2022 Root user \u2013 Your sign in credentials used for authentication are the email \naddress you used to create the AWS account and the password you specified at \nthat time. \n\u2022 Federated principal \u2013 Your identity provider authenticates you and passes your \ncredentials to AWS, you don't have to sign-in directly to AWS. Both IAM Identity",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 73
+    }
+  },
+  {
+    "content": "credentials to AWS, you don't have to sign-in directly to AWS. Both IAM Identity \nCenter and IAM support identity federation. \n\u2022 Users in AWS IAM Identity Center directory(not federated)\u2013 Users created \ndirectly in the IAM Identity Center default directory sign in using the AWS access \nportal and provide your username and password. \n\u2022 IAM user \u2013 You sign-in by providing your account ID or alias, your username, \nand password. To authenticate workloads from the API or AWS CLI, you might",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 74
+    }
+  },
+  {
+    "content": "and password. To authenticate workloads from the API or AWS CLI, you might \nuse temporary credentials through assuming a role or you might use long-term \ncredentials by providing your access key and secret key. \nTo learn more about the IAM entities, see IAM users and IAM roles. \nAWS recommends that you use multi-factor authentication (MFA) with all users to \nincrease the security of your account. To learn more about MFA, see AWS Multi-factor \nauthentication in IAM.",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 75
+    }
+  },
+  {
+    "content": "authentication in IAM. \nAuthorization and permission policy basics \nAuthorization refers to the principal having the required permissions to complete their \nrequest. During authorization, IAM identifies the policies that apply to the request using \nvalues from the request context. It then uses the policies to determine whether to allow \nor deny the request. IAM stores most permission policies as JSON documents that \nspecify the permissions for principal entities.",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 76
+    }
+  },
+  {
+    "content": "specify the permissions for principal entities. \nThere are several types of policies that can affect an authorization request. To provide \nyour users with permissions to access the AWS resources in your account, you can use \nidentity-based policies. Resource-based policies can grant cross-account access. To \nmake a request in a different account, a policy in the other account must allow you to \naccess the resource and the IAM entity that you use to make the request must have an",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 77
+    }
+  },
+  {
+    "content": "access the resource and the IAM entity that you use to make the request must have an \nidentity-based policy that allows the request. \nIAM checks each policy that applies to the context of your request. IAM policy \nevaluation uses an explicit deny, which means that if a single permissions policy \nincludes a denied action, IAM denies the entire request and stops evaluating. Because \nrequests are denied by default, the applicable permissions policies must allow every",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 78
+    }
+  },
+  {
+    "content": "requests are denied by default, the applicable permissions policies must allow every \npart of your request for IAM to authorize your request. The evaluation logic for a request \nwithin a single account follows these basic rules: \n\u2022 By default, all requests are denied. (In general, requests made using the AWS \naccount root user credentials for resources in the account are always allowed.) \n\u2022 An explicit allow in any permissions policy (identity-based or resource-based) \noverrides this default.",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 79
+    }
+  },
+  {
+    "content": "overrides this default. \n\u2022 The existence of an AWS Organizations service control policy (SCP) or resource \ncontrol policy (RCP), IAM permissions boundary, or a session policy overrides \nthe allow. If one or more of these policy types exists, they must all allow the \nrequest. Otherwise, it's implicitly denied. For more information on SCPs and \nRCPs, see Authorization policies in AWS Organizations in the AWS Organizations \nUser Guide.",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 80
+    }
+  },
+  {
+    "content": "RCPs, see Authorization policies in AWS Organizations in the AWS Organizations \nUser Guide. \n\u2022 An explicit deny in any policy overrides any allows in any policy. \nTo learn more, see Policy evaluation logic. \nAfter IAM authenticates and authorizes the principal, IAM approves the actions or \noperations in their request by evaluating the permission policy that applies to the \nprincipal. Each AWS service defines the actions (operations) they support, and include",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 81
+    }
+  },
+  {
+    "content": "principal. Each AWS service defines the actions (operations) they support, and include \nthings that you can do to a resource, such as viewing, creating, editing, and deleting \nthat resource. The permission policy that applies to the principal must include the \nnecessary actions to perform an operation. To learn more about how IAM evaluates \npermission policies, see Policy evaluation logic. \nThe service defines a set of actions that a principal can perform on each resource.",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 82
+    }
+  },
+  {
+    "content": "The service defines a set of actions that a principal can perform on each resource. \nWhen creating permission policies, make sure to include the actions that you want the \nuser to be able to perform. For example, IAM supports over 40 actions for a user \nresource, including the following basic actions: \n\u2022 CreateUser \n\u2022 DeleteUser \n\u2022 GetUser \n\u2022 UpdateUser \nIn addition, you can specify conditions in your permission policy that provide access to",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 83
+    }
+  },
+  {
+    "content": "In addition, you can specify conditions in your permission policy that provide access to \nresources when the request meets the specified conditions. For example, you might \nwant a policy statement to take effect after a specific date or to control access when a \nspecific value appears in an API. To specify conditions, you use the Condition element \nof a policy statement. \nAfter IAM approves the operations in a request, the principal can work with the related",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 84
+    }
+  },
+  {
+    "content": "After IAM approves the operations in a request, the principal can work with the related \nresources in your account. A resource is an object that exists within a service. \nExamples include an Amazon EC2 instance, an IAM user, and an Amazon S3 bucket. If \nthe principal creates a request to perform an action on a resource that isn't included in \nthe permission policy, the service denies the request. For example, if you have",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 85
+    }
+  },
+  {
+    "content": "the permission policy, the service denies the request. For example, if you have \npermission to delete an IAM role but request to delete an IAM group, the request fails if \nyou don't have permission to delete IAM groups. To learn more about which actions, \nresources, and condition keys the different AWS services support, see Actions, \nResources, and Condition Keys for AWS Services.",
+    "metadata": {
+      "filename": "AWS IAM.pdf",
+      "filetype": "pdf",
+      "chunk_id": 86
+    }
+  }
+]
